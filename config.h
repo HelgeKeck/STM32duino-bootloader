@@ -157,7 +157,7 @@
 
 
     #define LED_BANK            GPIOA
-    #define LED_PIN             14
+    #define LED_PIN             13
     #define LED_ON_STATE        1
 
 // Use Boot1 PB2 as the button, as hardly anyone uses this pin as GPIO
