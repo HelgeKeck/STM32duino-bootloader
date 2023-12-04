@@ -155,7 +155,7 @@
 #elif defined TARGET_GENERIC_F103_PA14
     #define LED_BANK            GPIOA
     #define LED_PIN             13
-    #define LED_ON_STATE        0
+    #define LED_ON_STATE        1
 
     // Button (if you have one)
     #define BUTTON_BANK GPIOA
