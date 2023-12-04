@@ -39,9 +39,7 @@ extern u8 u8_usbFunctionalDescriptor[];
 
 void setupUSB (void) {
 
-#if defined(INIT_PIN_BANK) && defined(INIT_PIN_PIN) && defined(INIT_PIN_STATE)
-    gpio_write_bit(INIT_PIN_BANK,INIT_PIN_PIN,INIT_PIN_STATE);
-#endif
+gpio_write_bit(INIT_PIN_BANK,INIT_PIN_PIN,INIT_PIN_STATE);
 
 #ifdef HAS_MAPLE_HARDWARE
     /* Setup USB DISC pin as output open drain */
