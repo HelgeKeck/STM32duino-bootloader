@@ -162,7 +162,7 @@
     // Button (if you have one)
     #define BUTTON_BANK GPIOA
     #define BUTTON_PIN 15
-    #define BUTTON_PRESSED_STATE 0
+    #define BUTTON_PRESSED_STATE 1
 
 #elif defined TARGET_GENERIC_F103_PC13_FASTBOOT
 
