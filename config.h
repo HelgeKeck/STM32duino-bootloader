@@ -153,8 +153,9 @@
     #define LED_ON_STATE        0
 
 #elif defined TARGET_GENERIC_F103_PA14
-    // #define INIT_PIN_BANK       GPIOA
-    // #define INIT_PIN_PIN        14
+    #define INIT_PIN_BANK       GPIOA
+    #define INIT_PIN_PIN        14
+    #define INIT_PIN_STATE      1
 
     // #define LED_BANK            GPIOA
     // #define LED_PIN             13
