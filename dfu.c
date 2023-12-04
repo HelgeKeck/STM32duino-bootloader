@@ -73,7 +73,7 @@ void dfuInit(void) {
 
 
 bool dfuUpdateByRequest(void) {
-    /* were using the global pInformation struct from usb_lib here,
+    /* were using the global pInformation struct from lib here,
        see comment in maple_dfu.h around DFUEvent struct */
     dfuBusy = TRUE;
 
