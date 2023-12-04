@@ -148,7 +148,6 @@
 
 #elif defined TARGET_GENERIC_F103_PC13
 
-
     #define LED_BANK            GPIOC
     #define LED_PIN             13
     #define LED_ON_STATE        0
@@ -161,11 +160,9 @@
     // Button (if you have one)
     #define BUTTON_BANK GPIOA
     #define BUTTON_PIN 14   
-    #define BUTTON_PRESSED_STATE 1
+    #define BUTTON_PRESSED_STATE 0
 
 #elif defined TARGET_GENERIC_F103_PC13_FASTBOOT
-
-
     #define LED_BANK            GPIOC
     #define LED_PIN             13
     #define LED_ON_STATE        0
