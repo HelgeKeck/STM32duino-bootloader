@@ -3,6 +3,7 @@ make maple-rev3
 make maple-rev5
 make generic-none
 make generic-pc13
+make generic-pa14
 make generic-pg15
 make generic-pd2
 make generic-pd1
