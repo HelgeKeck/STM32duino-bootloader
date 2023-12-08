@@ -153,14 +153,19 @@
     #define LED_ON_STATE        0
 
 #elif defined TARGET_GENERIC_F103_PA14
+    #define HAS_MAPLE_HARDWARE 1
+
     #define LED_BANK            GPIOA
-    #define LED_PIN             14
+    #define LED_PIN             13
     #define LED_ON_STATE        0
 
-    // Button (if you have one)
-    #define BUTTON_BANK GPIOA
-    #define BUTTON_PIN 15   
-    #define BUTTON_PRESSED_STATE 1
+    // // Button (if you have one)
+    // #define BUTTON_BANK GPIOA
+    // #define BUTTON_PIN 15   
+    // #define BUTTON_PRESSED_STATE 1
+
+    #define USB_DISC_BANK         GPIOA
+    #define USB_DISC_PIN             14
 
 #elif defined TARGET_GENERIC_F103_PC13_FASTBOOT
     #define LED_BANK            GPIOC
