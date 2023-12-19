@@ -154,7 +154,7 @@ void setupCLK(void) {
 
 
 void setupLEDAndButton (void) {
-    SET_REG(AFIO_MAPR,(GET_REG(AFIO_MAPR) & ~AFIO_MAPR_SWJ_CFG) | AFIO_MAPR_SWJ_CFG_NO_JTAG_NO_SW);// Try to disable SWD AND JTAG so we can use those pins (not sure if this works).
+    SET_REG(AFIO_MAPR,(GET_REG(AFIO_MAPR) & ~AFIO_MAPR_SWJ_CFG) | AFIO_MAPR_SWJ_CFG_NO_JTAG_SW);// Try to disable SWD AND JTAG so we can use those pins (not sure if this works).
 
 #if defined(BUTTON_BANK) && defined (BUTTON_PIN) && defined (BUTTON_PRESSED_STATE)
     SET_REG(GPIO_CR(BUTTON_BANK,BUTTON_PIN),(GET_REG(GPIO_CR(BUTTON_BANK,BUTTON_PIN)) & crMask(BUTTON_PIN)) | BUTTON_INPUT_MODE << CR_SHITF(BUTTON_PIN));
