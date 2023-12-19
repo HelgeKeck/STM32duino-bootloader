@@ -166,11 +166,6 @@ void setupLEDAndButton (void) {
 #endif
 }
 
-static inline void afio_cfg_debug_ports(afio_debug_cfg config) {
-    __IO uint32 *mapr = &AFIO_BASE->MAPR;
-    *mapr = (*mapr & ~AFIO_MAPR_SWJ_CFG) | config;
-}
-
 void setupFLASH() {
     /* configure the HSI oscillator */
     if ((pRCC->CR & 0x01) == 0x00) {
