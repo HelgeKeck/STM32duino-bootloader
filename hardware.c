@@ -154,9 +154,8 @@ void setupCLK(void) {
 
 
 void setupLEDAndButton (void) {
-    // SET_REG(AFIO_MAPR,(GET_REG(AFIO_MAPR) & ~AFIO_MAPR_SWJ_CFG) | AFIO_MAPR_SWJ_CFG_NO_JTAG_SW);// Try to disable SWD AND JTAG so we can use those pins (not sure if this works).
-    afio_cfg_debug_ports(AFIO_MAPR_SWJ_CFG_FULL_SWJ);
-    afio_cfg_debug_ports(AFIO_MAPR_SWJ_CFG_NO_JTAG_SW);
+    SET_REG(AFIO_MAPR,(GET_REG(AFIO_MAPR) & ~AFIO_MAPR_SWJ_CFG) | AFIO_MAPR_SWJ_CFG_FULL_SWJ);// Try to disable SWD AND JTAG so we can use those pins (not sure if this works).
+    SET_REG(AFIO_MAPR,(GET_REG(AFIO_MAPR) & ~AFIO_MAPR_SWJ_CFG) | AFIO_MAPR_SWJ_CFG_NO_JTAG_SW);// Try to disable SWD AND JTAG so we can use those pins (not sure if this works).
 #if defined(BUTTON_BANK) && defined (BUTTON_PIN) && defined (BUTTON_PRESSED_STATE)
     SET_REG(GPIO_CR(BUTTON_BANK,BUTTON_PIN),(GET_REG(GPIO_CR(BUTTON_BANK,BUTTON_PIN)) & crMask(BUTTON_PIN)) | BUTTON_INPUT_MODE << CR_SHITF(BUTTON_PIN));
 
@@ -165,6 +164,11 @@ void setupLEDAndButton (void) {
 #if defined(LED_BANK) && defined(LED_PIN) && defined(LED_ON_STATE)
     SET_REG(GPIO_CR(LED_BANK,LED_PIN),(GET_REG(GPIO_CR(LED_BANK,LED_PIN)) & crMask(LED_PIN)) | CR_OUTPUT_PP << CR_SHITF(LED_PIN));
 #endif
+}
+
+static inline void afio_cfg_debug_ports(afio_debug_cfg config) {
+    __IO uint32 *mapr = &AFIO_BASE->MAPR;
+    *mapr = (*mapr & ~AFIO_MAPR_SWJ_CFG) | config;
 }
 
 void setupFLASH() {
